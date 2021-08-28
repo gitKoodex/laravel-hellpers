@@ -1357,7 +1357,7 @@ if(! function_exists("parsi_date")){
 if(!  function_exists("submit_btn")) {
     function submit_btn(string $status = "success",string $id="add-user",string $message="")
     {
-        return "<a class='btn btn-" . $status . " submit-btn' type='submit' id='".$id."'><i class='fas fa-check'></i>" . $message . "</a>";
+        return "<button class='btn btn-" . $status . " submit-btn' type='submit' id='".$id."'><i class='fas fa-check'></i>" . $message . "</button>";
     }
 }
 
