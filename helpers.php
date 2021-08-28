@@ -1409,3 +1409,60 @@ if(!function_exists("faDateToTimestamp")) {
         return $Jdate->persianStrToTime($string);
     }
 }
+
+/*
+|--------------------------------------------------------------------------
+| result_msg
+|--------------------------------------------------------------------------
+|
+| return bootstrap alert message base on your massage
+| 
+|
+*/
+
+if(! function_exists('result_msg')){
+    function result_msg($message="done"){
+        switch($message){
+            case "done":
+                return '<div class="alert alert-success alert-dismissible fade show d-flex justify-content-between px-2" role="alert">
+                <div><strong>عملیات</strong> با موفقیت انجام شد.</div>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>';
+            break;
+            case "error":
+                return '<div class="alert alert-danger alert-dismissible fade show d-flex justify-content-between px-2" role="alert">
+                <div><strong>عملیات</strong> با خطا مواجه شد. لطفاً تیم پشتیبانی را مطلع کنید.</div>
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>';
+            break;
+            default:
+                return '<div class="alert alert-info alert-dismissible fade show" role="alert">
+                <strong>خطا بازگشت</strong> شما در کنترلر باید پیام done یا error را بازگردانید.
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>';    
+            break;    
+        }
+    }
+}
+
+/*
+|--------------------------------------------------------------------------
+| hidden
+|--------------------------------------------------------------------------
+|
+| get name and value return hidden input,
+| 
+|
+*/
+
+if(! function_exists('hidden')){
+    function hidden($name="user_id",$value="1"){
+        return "<input type='hidden' value='$value' name='$name' id='$name'>";
+    }
+}
