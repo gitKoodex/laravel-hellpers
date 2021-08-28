@@ -1355,9 +1355,9 @@ if(! function_exists("parsi_date")){
 |
 */
 if(!  function_exists("submit_btn")) {
-    function submit_btn(string $status = "success", string $message)
+    function submit_btn(string $status = "success",string $id="add-user",string $message="")
     {
-        return "<a class='btn btn-" . $status . " submit-btn' type='submit'><i class='fas fa-check'></i>" . $message . "</a>";
+        return "<a class='btn btn-" . $status . " submit-btn' type='submit' id='".$id."'><i class='fas fa-check'></i>" . $message . "</a>";
     }
 }
 
@@ -1386,7 +1386,26 @@ if(! function_exists('make_js_path')) {
 |
 |
 */
+if(!function_exists("gnerate_img_file_name")) {
+    function gnerate_img_file_name()
+    {
+        return uniqid('report-img-');
+    }
+}
 
-function gnerate_img_file_name(){
-       return uniqid('report-img-');
+
+/*
+|--------------------------------------------------------------------------
+| faDateToTimestamp
+|--------------------------------------------------------------------------
+|
+| get persian date as string rrturn time stamp of that date for save in database
+|
+|
+*/
+if(!function_exists("faDateToTimestamp")) {
+    function faDateToTimestamp(string $string="1400/01/01"){
+        $Jdate = new Jdate();
+        return $Jdate->persianStrToTime($string);
+    }
 }
